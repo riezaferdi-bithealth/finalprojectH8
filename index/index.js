@@ -55,7 +55,7 @@ function setComplete(checked, id) {
     let todos = JSON.parse(localStorage.getItem('todos'));
     
     todos = todos.map(el => {
-        if (el.id === Number(id)) {
+        if (el.id == Number(id)) {
             el.checked = checked;
         }
         return el;
@@ -71,7 +71,7 @@ function deleteTodo(id) {
 
     todos = todos.filter(el => el.id !== Number(id));
 
-    if (todos.length) {
+    if (todos.length === todos.length) {
         localStorage.setItem('todos', JSON.stringify(todos));
     } else {
         localStorage.removeItem('todos');
